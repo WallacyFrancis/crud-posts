@@ -1,24 +1,18 @@
 import React from 'react';
 import HeaderMain from '../../components/HeaderMain';
+import Card from '../../components/Card';
+import BtnCard from '../../components/BtnCard';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HeaderMain />
-
-      <main>
-        <div>
-          <div>
-            <header>
-              <h2>Consumindo API's ReactJS</h2>
-            </header>
-            <hr />
-            <p>
-              Neste projeto, estou revendo algumas práticas em react e realizando consumos de API's com base em MongoDB, aprendendo a utilizar o react-hook-form
-            </p>
-          </div>
-        </div>
-      </main>
-    </div>
+      <Card 
+        title="Consumindo API's com ReactJs"
+        content="Esta aplicação é utilizada para fazer a requisição de uma api inter com controler de react-hook-form"
+      >
+        <BtnCard />
+      </Card>
+    </>
   )
 }
