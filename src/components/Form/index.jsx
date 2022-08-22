@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function index({children}) {
+export default function index({children, handleSubmit}) {
   return (
-    <form>{children}</form>
+    <form onSubmit={handleSubmit}>{children}</form>
   )
 }

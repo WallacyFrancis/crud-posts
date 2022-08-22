@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
@@ -18,4 +24,11 @@ export const TextArea = styled.textarea`
   padding-left: 15px;
   padding-top: 10px;
   margin-top: 3px;
+  font-family: Poppins;
+`
+
+export const P = styled.p`
+  color: red;
+  font-family: Poppins;
+  font-size: 0.8rem;
 `

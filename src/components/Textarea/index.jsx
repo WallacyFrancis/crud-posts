@@ -1,12 +1,13 @@
 import React from 'react';
-import { Label, TextArea } from './styles'
+import { Container, Label, TextArea, P } from './styles'
 
-export default function Textarea({label}) {
+export default function Textarea({label, name, props, message}) {
   return (
-    <>
+    <Container>
       <Label>{label}
-        <TextArea name="" id="" cols="30" rows="10" />
+        <TextArea cols="30" rows="8" name={name} {...props}  />
       </Label>
-    </>
+      <P>{message}</P>
+    </Container>
   )
 }
