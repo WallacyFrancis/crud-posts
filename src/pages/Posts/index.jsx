@@ -28,18 +28,24 @@ export default function Posts() {
               <InputForm 
                 label="Título" 
                 name="title"
+                props={register("title")}
+                message={errors.title?.message}
               />
             </Fieldset>
             <Fieldset>
               <InputForm
                 label="Descrição"
                 name="description"
+                props={register("description")}
+                message={errors.description?.message}
               />
             </Fieldset>
             <Fieldset>
               <Textarea
                 label="Conteúdo"
-                name="content" 
+                name="content"
+                props={register("content")}
+                message={errors.content?.message} 
               />
             </Fieldset>
             <BtnForm />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Label, Input, P } from './styles'
 
-export default function InputForm({ label, name, props, message }) {
+export default function InputForm({ label, name, message, props }) {
   return (
     <Container>
       <Label>{label}
