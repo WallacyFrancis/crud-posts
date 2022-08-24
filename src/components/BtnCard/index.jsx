@@ -7,16 +7,16 @@ import {
   BtnDelete,
 } from './styles'
 
-export default function BtnCard() {
+export default function BtnCard({id}) {
   return (
     <CardButton>
-      <Link to="/edit">
+      <Link to={`/edit/${id}`}>
         <BtnEdit>Edit</BtnEdit>
       </Link>
-      <Link to="/readmore">
+      <Link to={`/readmore/${id}`}>
         <BtnRead>Ler Mais</BtnRead>
       </Link>
-      <Link to="/404">
+      <Link to={`/${id}`}>
         <BtnDelete>Delete</BtnDelete>
       </Link>
     </CardButton>

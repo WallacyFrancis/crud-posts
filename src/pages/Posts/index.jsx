@@ -8,14 +8,17 @@ import Fieldset from '../../components/Fieldset';
 import InputForm from '../../components/InputForm';
 import Textarea from '../../components/Textarea';
 import BtnForm from '../../components/BtnForm';
-import { formSchema } from '../../components/Schema/Form';
+import { formSchema } from '../../schema/Form';
+import { post } from '../../utils/service';
 
 export default function Posts() {
   const { register, handleSubmit, formState: {errors} } = useForm({
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = (data) => { console.log(data)}
+  const onSubmit = async (data) => { 
+    return post('/posts', data)
+   };
 
   return (
     <>
