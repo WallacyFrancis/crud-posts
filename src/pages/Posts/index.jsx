@@ -21,7 +21,7 @@ export default function Posts() {
 
   const onSubmit = async (data) => { 
     post('/posts', data);
-    navigate('/');
+    navigate('/', { replace: false });
   };
   
   return (
