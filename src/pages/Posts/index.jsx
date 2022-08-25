@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -16,10 +17,13 @@ export default function Posts() {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = async (data) => { 
-    return post('/posts', data)
-   };
+  const navigate = useNavigate();
 
+  const onSubmit = async (data) => { 
+    post('/posts', data);
+    navigate('/', { replace: true });
+  };
+  
   return (
     <>
       <Header title="CRIAR POST" />

@@ -5,9 +5,9 @@ import {
   BtnEdit, 
   BtnRead, 
   BtnDelete,
-} from './styles'
+} from './styles';
 
-export default function BtnCard({id}) {
+export default function BtnCard({id, handleDelte}) {
   return (
     <CardButton>
       <Link to={`/edit/${id}`}>
@@ -16,9 +16,7 @@ export default function BtnCard({id}) {
       <Link to={`/readmore/${id}`}>
         <BtnRead>Ler Mais</BtnRead>
       </Link>
-      <Link to={`/${id}`}>
-        <BtnDelete>Delete</BtnDelete>
-      </Link>
+        <BtnDelete onClick={handleDelte}>Delete</BtnDelete>
     </CardButton>
   )
 }

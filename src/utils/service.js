@@ -27,3 +27,19 @@ export const getOne = async (endpoint) => {
     console.log(e);
   }
 }
+
+export const update = async (id, body) => {
+  try {
+    return api.put(id, body);
+  } catch(e) {
+    console.log(e);
+  }
+}
+
+export const exclude = async (endpoint) => {
+  try {
+    return api.delete(endpoint);
+  } catch(e) {
+    console.log(e);
+  }
+}

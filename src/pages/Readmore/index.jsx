@@ -3,32 +3,32 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/Header';
 import Card from '../../components/Card';
 import { getOne } from '../../utils/service';
+import Loading from '../../components/Loading';
 
 export default function Readmore() {
-  const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState();
   const { id } = useParams();
 
   const getUnicPost = async () => {
     const { data } = await getOne(`/posts/${id}`);
-    setPosts(data);
+    setPost(data);
   }
 
   useEffect(() => {
     getUnicPost()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
+      { console.log(post) }
       <Header title="LEIA MAIS" />
-      {posts !== undefined && posts.map((post) => {
-        return (
-          <Card 
-            title="Consumindo API's com ReactJs"
-            content="Esta aplicação é utilizada para fazer a requisição de uma api inter com controler de react-hook-form. Esta aplicação é utilizada para fazer a requisição de uma api inter com controler de react-hook-form. Esta aplicação é utilizada para fazer a requisição de uma api inter com controler de react-hook-form. Esta aplicação é utilizada para fazer a requisição de uma api inter com controler de react-hook-form"
-          />
-        )
-      })}
-      {}
+      {post === undefined ? (<Loading />) : (
+        <Card 
+          title={post.title}
+          content={post.content}
+        />
+      )}
     </>
   )
 }

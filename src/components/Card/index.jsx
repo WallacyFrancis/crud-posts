@@ -10,16 +10,16 @@ import {
 export default function Card({title, content, children}) {
   return (
     <Container>
-        <Content>
-          <CardHeader>
-            {title}
-          </CardHeader>
-          <Line />
-          <CardContent>
-            {content}
-          </CardContent>
-          {children}
-        </Content>
-      </Container>
+      <Content>
+        <CardHeader>
+          {title}
+        </CardHeader>
+        <Line />
+        <CardContent>
+          {content}
+        </CardContent>
+        {children}
+      </Content>
+    </Container>
   )
 }
